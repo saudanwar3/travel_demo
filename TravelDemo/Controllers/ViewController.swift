@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.initializeView()
         self.loadJsonfile()
-        self.cheapestFlightBtnClicked(self.cheapestFlightBtn)
+//        self.cheapestFlightBtnClicked(self.cheapestFlightBtn)
     }
     
     func initializeView() -> Void {
@@ -53,10 +53,10 @@ class ViewController: UIViewController {
         self.flightCollectionView.register(flightCollectionCell, forCellWithReuseIdentifier: String(describing: FlightCollectionViewCell.self))
         
         self.cheapestFlightMainView.backgroundColor = .white
-        self.cheapestFlightLbl.textColor = .darkGray
-        cheapestFlightIconImgView.image = cheapestFlightIconImgView.image?.withRenderingMode(.alwaysTemplate)
-        cheapestFlightIconImgView.tintColor = UIColor.darkGray
-        
+        self.cheapestFlightLbl.textColor = .link
+        self.cheapestFlightIconImgView.image = self.cheapestFlightIconImgView.image?.withRenderingMode(.alwaysTemplate)
+        self.cheapestFlightIconImgView.tintColor = UIColor.link
+
         self.fastFlightMainView.backgroundColor = .white
         self.fastFlightLbl.textColor = .darkGray
         fastFlightIconImgView.image = fastFlightIconImgView.image?.withRenderingMode(.alwaysTemplate)
@@ -94,6 +94,7 @@ class ViewController: UIViewController {
             self.flexibleIconImgView.image = self.flexibleIconImgView.image?.withRenderingMode(.alwaysTemplate)
             self.flexibleIconImgView.tintColor = UIColor.darkGray
         }) { _ in
+            self.flightCollectionView.reloadData()
         }
         
         
@@ -116,8 +117,9 @@ class ViewController: UIViewController {
             self.flexibleIconImgView.image = self.flexibleIconImgView.image?.withRenderingMode(.alwaysTemplate)
             self.flexibleIconImgView.tintColor = UIColor.darkGray
         }) { _ in
+            self.flightCollectionView.reloadData()
         }
-        
+
         
         
     }
@@ -140,8 +142,9 @@ class ViewController: UIViewController {
             self.fastFlightIconImgView.image = self.fastFlightIconImgView.image?.withRenderingMode(.alwaysTemplate)
             self.fastFlightIconImgView.tintColor = UIColor.darkGray
         }) { _ in
+            self.flightCollectionView.reloadData()
+
         }
-        
     }
     
     
@@ -169,6 +172,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             flightNum = (self.flightModel?.results[indexPath.row].segments.first?.airlineDetails.flightNumber)!
 
         }
+        let flightDot = UIImage.gifImageWithName("flight_dots")
+               let outboundFlightDot = UIImage.gifImageWithName("Flight_Reverse_Dots")
+
+               cell.flightDotImgView.image = flightDot
+               cell.outboundFlightDotImgView.image = outboundFlightDot
+
         cell.flightNumLbl.text = airlineCode + flightNum
         return cell
         
@@ -177,11 +186,21 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let marginsAndInsets = inset * 2 + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
         let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow)).rounded(.down)
-        let itemHeight = itemWidth / 2.5 //ratio
+        let itemHeight = itemWidth / 1.0 //ratio
 
         return CGSize(width: itemWidth, height: itemHeight )
 
     }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.transform = CGAffineTransform(scaleX: 0.11, y: 0.11)
+        UIView.animate(withDuration: 0.5) {
+            cell.transform = CGAffineTransform.identity
+        }
+        
+        self.viewWillLayoutSubviews()
+        
+    }
+
 }
 
 extension ViewController

@@ -12,12 +12,17 @@ class FlightCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var flightNumLbl: UILabel!
     @IBOutlet weak var flightDotImgView: UIImageView!
+    @IBOutlet weak var outboundFlightDotImgView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        let flightDot = UIImage.gifImageWithName("flight_dots")
-        self.flightDotImgView.image = flightDot
+//        DispatchQueue.main.asyncAfter(deadline: .now()) {
+          // your code here
+
+//        }
+
+       
         
 
     }
