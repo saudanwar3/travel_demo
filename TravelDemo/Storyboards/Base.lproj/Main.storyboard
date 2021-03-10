@@ -59,6 +59,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e24-8S-86e">
                                                 <rect key="frame" x="0.0" y="0.0" width="117" height="81"/>
+                                                <connections>
+                                                    <action selector="cheapestFlightBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kAy-lE-ZSK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -94,6 +97,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qc-e3-Jse">
                                                 <rect key="frame" x="0.0" y="0.0" width="117" height="81"/>
+                                                <connections>
+                                                    <action selector="fastFlightBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A5N-Ev-QGN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -129,6 +135,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICk-U4-BRU">
                                                 <rect key="frame" x="0.0" y="0.0" width="117" height="81"/>
+                                                <connections>
+                                                    <action selector="flexibleFlightBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9IR-JM-AY6"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,6 +167,10 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Arq-XW-hap"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="A2c-T1-xy7"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -179,6 +192,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonsStackView" destination="ZsT-p3-B0J" id="5EJ-51-g5H"/>
+                        <outlet property="cheapestFlightBtn" destination="e24-8S-86e" id="lLh-so-G17"/>
+                        <outlet property="cheapestFlightIconImgView" destination="f9F-6A-MDQ" id="PJb-pw-IlM"/>
+                        <outlet property="cheapestFlightLbl" destination="XuD-gH-i9s" id="Tba-XA-E7e"/>
+                        <outlet property="cheapestFlightMainView" destination="h1f-Op-CdK" id="2JH-PX-YOk"/>
+                        <outlet property="fastFlightBtn" destination="7qc-e3-Jse" id="Xuf-ty-ZLT"/>
+                        <outlet property="fastFlightIconImgView" destination="dv4-8O-sVX" id="lEI-j4-PFP"/>
+                        <outlet property="fastFlightLbl" destination="Rhc-9L-yDC" id="OIp-Lj-YFS"/>
+                        <outlet property="fastFlightMainView" destination="eDL-xl-5Bz" id="YCz-Qa-HLe"/>
+                        <outlet property="flexibleBtn" destination="ICk-U4-BRU" id="HVL-c6-zzf"/>
+                        <outlet property="flexibleIconImgView" destination="LDu-Ku-Mda" id="fz8-bR-ddS"/>
+                        <outlet property="flexibleLbl" destination="YWF-bW-sdj" id="Pg8-Le-0fE"/>
+                        <outlet property="flexibleMainView" destination="gEo-mD-WGJ" id="c3O-Xb-hiH"/>
+                        <outlet property="flightCollectionView" destination="mlN-ci-MAo" id="hjw-oQ-ykj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

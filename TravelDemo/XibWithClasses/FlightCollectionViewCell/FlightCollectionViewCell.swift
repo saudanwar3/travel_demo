@@ -10,6 +10,7 @@ import UIKit
 
 class FlightCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var flightNumLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
