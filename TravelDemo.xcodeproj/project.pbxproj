@@ -25,6 +25,8 @@
 		4E3C950325F83A5E009BE199 /* AirlineDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C950225F83A5E009BE199 /* AirlineDetailModel.swift */; };
 		4E3C950825F84EAC009BE199 /* FlightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C950625F84EAC009BE199 /* FlightCollectionViewCell.swift */; };
 		4E3C950925F84EAC009BE199 /* FlightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C950725F84EAC009BE199 /* FlightCollectionViewCell.xib */; };
+		4EA6D09825F91F40005D4585 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA6D09725F91F40005D4585 /* UIImageExtension.swift */; };
+		4EA6D09A25F91F59005D4585 /* flight_dots.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4EA6D09925F91F59005D4585 /* flight_dots.gif */; };
 		A810856421AAD2FD1228D292 /* Pods_TravelDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0010F936CDD942871D71E92D /* Pods_TravelDemo.framework */; };
 		C42721AC99C08F561C80C51E /* Pods_TravelDemo_TravelDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54140DA4FC7B544265A1F2EB /* Pods_TravelDemo_TravelDemoUITests.framework */; };
 		C732B26FBD96EE9F507DC4E2 /* Pods_TravelDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5097C5955A8C06888775DF42 /* Pods_TravelDemoTests.framework */; };
@@ -74,6 +76,8 @@
 		4E3C950225F83A5E009BE199 /* AirlineDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineDetailModel.swift; sourceTree = "<group>"; };
 		4E3C950625F84EAC009BE199 /* FlightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCollectionViewCell.swift; sourceTree = "<group>"; };
 		4E3C950725F84EAC009BE199 /* FlightCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightCollectionViewCell.xib; sourceTree = "<group>"; };
+		4EA6D09725F91F40005D4585 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		4EA6D09925F91F59005D4585 /* flight_dots.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = flight_dots.gif; sourceTree = "<group>"; };
 		5097C5955A8C06888775DF42 /* Pods_TravelDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54140DA4FC7B544265A1F2EB /* Pods_TravelDemo_TravelDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelDemo_TravelDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		577855D0BB105CF9DC7963A9 /* Pods-TravelDemo-TravelDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelDemo-TravelDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-TravelDemo-TravelDemoUITests/Pods-TravelDemo-TravelDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 		4E3C94BB25F7EB1B009BE199 /* TravelDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4EA6D09625F91EB8005D4585 /* Utilities */,
 				4E3C950425F84E78009BE199 /* XibWithClasses */,
 				4E3C94F325F81401009BE199 /* DataModels */,
 				4E3C94F225F8138F009BE199 /* Assets */,
@@ -169,6 +174,7 @@
 		4E3C94EC25F812CB009BE199 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				4EA6D09925F91F59005D4585 /* flight_dots.gif */,
 				4E3C94ED25F812E0009BE199 /* SearchList.json */,
 			);
 			path = Resource;
@@ -237,6 +243,14 @@
 				4E3C950725F84EAC009BE199 /* FlightCollectionViewCell.xib */,
 			);
 			path = FlightCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		4EA6D09625F91EB8005D4585 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4EA6D09725F91F40005D4585 /* UIImageExtension.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		B72AE1551A417AAA273B9D3F /* Pods */ = {
@@ -373,6 +387,7 @@
 			files = (
 				4E3C950925F84EAC009BE199 /* FlightCollectionViewCell.xib in Resources */,
 				4E3C94C925F7EB1C009BE199 /* LaunchScreen.storyboard in Resources */,
+				4EA6D09A25F91F59005D4585 /* flight_dots.gif in Resources */,
 				4E3C94EE25F812E0009BE199 /* SearchList.json in Resources */,
 				4E3C94C625F7EB1C009BE199 /* Assets.xcassets in Resources */,
 				4E3C94C425F7EB1B009BE199 /* Main.storyboard in Resources */,
@@ -514,6 +529,7 @@
 				4E3C94FD25F823C7009BE199 /* FareModel.swift in Sources */,
 				4E3C94FB25F81BA8009BE199 /* FareBreakdownModel.swift in Sources */,
 				4E3C950125F83A01009BE199 /* DestinationModel.swift in Sources */,
+				4EA6D09825F91F40005D4585 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
