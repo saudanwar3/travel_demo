@@ -37,12 +37,12 @@ class ViewController: UIViewController {
     let minimumLineSpacing: CGFloat = 10
     let minimumInteritemSpacing: CGFloat = 10
     let cellsPerRow = 1
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initializeView()
         self.loadJsonfile()
-//        self.cheapestFlightBtnClicked(self.cheapestFlightBtn)
+        //        self.cheapestFlightBtnClicked(self.cheapestFlightBtn)
     }
     
     func initializeView() -> Void {
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         self.cheapestFlightLbl.textColor = .link
         self.cheapestFlightIconImgView.image = self.cheapestFlightIconImgView.image?.withRenderingMode(.alwaysTemplate)
         self.cheapestFlightIconImgView.tintColor = UIColor.link
-
+        
         self.fastFlightMainView.backgroundColor = .white
         self.fastFlightLbl.textColor = .darkGray
         fastFlightIconImgView.image = fastFlightIconImgView.image?.withRenderingMode(.alwaysTemplate)
@@ -119,7 +119,7 @@ class ViewController: UIViewController {
         }) { _ in
             self.flightCollectionView.reloadData()
         }
-
+        
         
         
     }
@@ -143,7 +143,7 @@ class ViewController: UIViewController {
             self.fastFlightIconImgView.tintColor = UIColor.darkGray
         }) { _ in
             self.flightCollectionView.reloadData()
-
+            
         }
     }
     
@@ -158,27 +158,52 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String.init(describing: FlightCollectionViewCell.self), for: indexPath) as!  FlightCollectionViewCell
-        let airlineDetails = self.flightModel?.results[indexPath.row].segments.first?.airlineDetails
-        var airlineCode:String = ""
-        var flightNum:String = ""
-        
-        if airlineDetails == nil {
-            airlineCode = "N/A"
-            flightNum = ""
-        }
-        else
-        {
-            airlineCode = (self.flightModel?.results[indexPath.row].segments.first?.airlineDetails.airlineCode)! + " - "
-            flightNum = (self.flightModel?.results[indexPath.row].segments.first?.airlineDetails.flightNumber)!
-
-        }
         let flightDot = UIImage.gifImageWithName("flight_dots")
-               let outboundFlightDot = UIImage.gifImageWithName("Flight_Reverse_Dots")
+        let outboundFlightDot = UIImage.gifImageWithName("Flight_Reverse_Dots")
+        let airlineDetails = self.flightModel?.results[indexPath.row]
+        let segments = self.flightModel?.results[indexPath.row].segments.first
+        var inboundDepartTime:String = (segments?.departureTime)!
+        var inboundArrivalTime:String = (segments?.arrivalTime)!
+        let inboundOriginDepartTime: String = convertDateFormat(inputDate:&inboundDepartTime)
+        let inboundOriginArrivalTime: String = convertDateFormat(inputDate:&inboundArrivalTime)
+        let inboundStops: String = String(describing: segments?.stops ?? 0) + " stop"
+        let inboundOriginAirportCode: String = (segments?.origin.airportCode ?? "N/A")
+        let inboundFlightDuration: String = (segments?.accumulatedDuration)!
+        let inboundBaggage: String = (segments?.includedBaggage)!
+        let inboundCabinClass: String = (segments?.cabinClass)!
+        let inboundAirlineName: String = (segments?.airlineDetails.airlineName)!
+        let inboundAirlineFlightNum: String = (segments?.airlineDetails.flightNumber)!
 
-               cell.flightDotImgView.image = flightDot
-               cell.outboundFlightDotImgView.image = outboundFlightDot
+//        var airlineCode:String = ""
+//        var flightNum:String = ""
+//
+//        if airlineDetails == nil {
+//            airlineCode = "N/A"
+//            flightNum = ""
+//        }
+//        else
+//        {
+//            airlineCode = (self.flightModel?.results[indexPath.row].segments.first?.airlineDetails.airlineCode)! + " - "
+//            flightNum = (self.flightModel?.results[indexPath.row].segments.first?.airlineDetails.flightNumber)!
+//
+//        }
+        
+        cell.flightDotImgView.image = flightDot
+        cell.outboundFlightDotImgView.image = outboundFlightDot
+        cell.flightNumLbl.text = airlineDetails?.validatingAirline
+        cell.inboundDepartTime.text = inboundOriginDepartTime
+        cell.inboundArrivalTime.text = inboundOriginArrivalTime
+        cell.inboundStops.text = inboundStops
+        cell.inboundOriginAirportCodeLbl.text = inboundOriginAirportCode
+        cell.inboundFlightDurationLbl.text = "Flight duration: " + inboundFlightDuration
+        cell.inboundBaggageLbl.text =  inboundBaggage
+        cell.inboundCabinClassNameLbl.text = inboundCabinClass
+        cell.inboundAirlineNameLbl.text = inboundAirlineName
+        cell.inboundCraftNameLbl.text = inboundAirlineFlightNum
 
-        cell.flightNumLbl.text = airlineCode + flightNum
+        cell.fareLbl.text = "AED " + String(format: "%.f", airlineDetails?.fare.totalFare! as! CVarArg) as String
+        
+        //String(airlineDetails?.fare.totalFare)
         return cell
         
     }
@@ -187,9 +212,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let marginsAndInsets = inset * 2 + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
         let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow)).rounded(.down)
         let itemHeight = itemWidth / 1.0 //ratio
-
+        
         return CGSize(width: itemWidth, height: itemHeight )
-
+        
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         cell.transform = CGAffineTransform(scaleX: 0.11, y: 0.11)
@@ -200,7 +225,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         self.viewWillLayoutSubviews()
         
     }
-
+    
 }
 
 extension ViewController
@@ -218,5 +243,23 @@ extension ViewController
         
         return flightData
     }
+    
+    func convertDateFormat(inputDate: inout String) -> String {
+        if inputDate == ""
+        {
+            inputDate = "2021-07-01T08:20:00"
+
+        }
+         let olDateFormatter = DateFormatter()
+         olDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+
+         let oldDate = olDateFormatter.date(from: inputDate)
+
+         let convertDateFormatter = DateFormatter()
+         convertDateFormatter.dateFormat = "hh:mm"
+
+         return convertDateFormatter.string(from: oldDate!)
+    }
+
     
 }

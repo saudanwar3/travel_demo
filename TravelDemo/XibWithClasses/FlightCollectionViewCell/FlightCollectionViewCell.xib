@@ -101,7 +101,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight duration : 2 hours 15 minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ak-08-D9x">
-                                <rect key="frame" x="138" y="100" width="169" height="12"/>
+                                <rect key="frame" x="140" y="100" width="169" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="169" id="lTQ-Rn-vgu"/>
                                 </constraints>
@@ -116,8 +116,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DXB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6Z-b7-3qE">
-                                <rect key="frame" x="92" y="96" width="30" height="18"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <rect key="frame" x="92" y="96" width="32" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -177,7 +177,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight duration : 2 hours 15 minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M66-yT-L03">
-                                <rect key="frame" x="140" y="267.5" width="169" height="12"/>
+                                <rect key="frame" x="142" y="267.5" width="169" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="169" id="Zsr-he-mWf"/>
                                 </constraints>
@@ -192,14 +192,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DXB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3y-55-Jo4">
-                                <rect key="frame" x="94" y="263.5" width="30" height="18"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <rect key="frame" x="94" y="263.5" width="32" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bb2-cv-enF">
-                                <rect key="frame" x="326" y="263.5" width="31.5" height="18"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <rect key="frame" x="324.5" y="263.5" width="33" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -216,8 +216,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jin-BD-Mnj">
-                                <rect key="frame" x="323.5" y="96" width="31.5" height="18"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <rect key="frame" x="322" y="96" width="33" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -313,9 +313,33 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="296" height="351"/>
             <connections>
+                <outlet property="fareLbl" destination="ERx-zp-kK8" id="TgO-zP-o6B"/>
                 <outlet property="flightDotImgView" destination="bho-QV-2iU" id="Bye-GC-bRh"/>
                 <outlet property="flightNumLbl" destination="zV8-ht-gaZ" id="wFU-J1-fcQ"/>
+                <outlet property="inboundAirlineIconImgView" destination="Tre-Il-hra" id="mZ9-nF-Uj4"/>
+                <outlet property="inboundAirlineNameLbl" destination="nyJ-oc-jou" id="TsY-oX-l2D"/>
+                <outlet property="inboundArrivalTime" destination="6bQ-uP-kKI" id="a9M-5V-UUP"/>
+                <outlet property="inboundBaggageLbl" destination="2Tz-zu-TBS" id="mrh-tC-wjA"/>
+                <outlet property="inboundCabinClassNameLbl" destination="NgR-sW-FVb" id="mfX-WM-0UN"/>
+                <outlet property="inboundCraftNameLbl" destination="hpj-L1-LKG" id="FHe-XX-HEy"/>
+                <outlet property="inboundDepartTime" destination="KPq-Om-7zG" id="Eii-AD-m7S"/>
+                <outlet property="inboundDestinationAirportCodeLbl" destination="jin-BD-Mnj" id="BLA-r2-BsX"/>
+                <outlet property="inboundFlightDurationLbl" destination="6Ak-08-D9x" id="5q3-Q5-CsM"/>
+                <outlet property="inboundOriginAirportCodeLbl" destination="W6Z-b7-3qE" id="VvC-NK-69T"/>
+                <outlet property="inboundStops" destination="dkI-dD-kOx" id="5Y5-oi-v1L"/>
+                <outlet property="outboundAirCraftNumLbl" destination="NDX-4S-VBm" id="2Yn-5w-kCb"/>
+                <outlet property="outboundAirlineIconImgView" destination="Pfn-eq-7lh" id="oiL-EP-wRn"/>
+                <outlet property="outboundAirlineNameLbl" destination="mg2-4l-pEA" id="YMR-th-nqF"/>
+                <outlet property="outboundArrivalTimeLbl" destination="pPK-Mm-gAO" id="fZz-l2-Zmv"/>
+                <outlet property="outboundBaggageLbl" destination="VZQ-Kg-4ju" id="PFO-Nv-la3"/>
+                <outlet property="outboundCabinClassLbl" destination="VJb-YI-em2" id="WFB-Fo-Muj"/>
+                <outlet property="outboundDepartTime" destination="Ooh-7m-xDB" id="AVs-eR-Eq1"/>
+                <outlet property="outboundDestinationAirportCodeLbl" destination="Bb2-cv-enF" id="qaW-lX-PzE"/>
                 <outlet property="outboundFlightDotImgView" destination="MMH-bW-1TR" id="mHb-oD-MVx"/>
+                <outlet property="outboundFlightDurationLbl" destination="M66-yT-L03" id="dDw-3z-CMh"/>
+                <outlet property="outboundFlightNumLbl" destination="3Xr-Ol-HK2" id="TFe-ce-Qa7"/>
+                <outlet property="outboundOriginAirportCodeLbl" destination="f3y-55-Jo4" id="lHB-38-A9i"/>
+                <outlet property="outboundStopsLbl" destination="4aP-9A-qQ8" id="L9w-Li-QX7"/>
             </connections>
             <point key="canvasLocation" x="314.49275362318843" y="234.04017857142856"/>
         </collectionViewCell>
