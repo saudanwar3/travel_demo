@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E382A9925FEEA66006A4B20 /* FlightDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E382A9825FEEA66006A4B20 /* FlightDetailsViewController.swift */; };
 		4E3C94BD25F7EB1B009BE199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C94BC25F7EB1B009BE199 /* AppDelegate.swift */; };
 		4E3C94C125F7EB1B009BE199 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C94C025F7EB1B009BE199 /* ViewController.swift */; };
 		4E3C94C425F7EB1B009BE199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C94C225F7EB1B009BE199 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		0010F936CDD942871D71E92D /* Pods_TravelDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CBFD524880D49B50FAFEAE0 /* Pods-TravelDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelDemo.release.xcconfig"; path = "Target Support Files/Pods-TravelDemo/Pods-TravelDemo.release.xcconfig"; sourceTree = "<group>"; };
+		4E382A9825FEEA66006A4B20 /* FlightDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsViewController.swift; sourceTree = "<group>"; };
 		4E3C94B925F7EB1B009BE199 /* TravelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3C94BC25F7EB1B009BE199 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E3C94C025F7EB1B009BE199 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				4E3C94C025F7EB1B009BE199 /* ViewController.swift */,
+				4E382A9825FEEA66006A4B20 /* FlightDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				4E3C94F725F81A83009BE199 /* FlightResultModel.swift in Sources */,
 				4E3C950325F83A5E009BE199 /* AirlineDetailModel.swift in Sources */,
 				4E3C94FF25F8394D009BE199 /* SegmentModel.swift in Sources */,
+				4E382A9925FEEA66006A4B20 /* FlightDetailsViewController.swift in Sources */,
 				4E3C94C125F7EB1B009BE199 /* ViewController.swift in Sources */,
 				4E3C950825F84EAC009BE199 /* FlightCollectionViewCell.swift in Sources */,
 				4E3C94F925F81B37009BE199 /* FareRuleModel.swift in Sources */,

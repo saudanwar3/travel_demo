@@ -164,8 +164,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let segments = self.flightModel?.results[indexPath.row].segments.first
         var inboundDepartTime:String = (segments?.departureTime)!
         var inboundArrivalTime:String = (segments?.arrivalTime)!
-        let inboundOriginDepartTime: String = convertDateFormat(inputDate:&inboundDepartTime)
-        let inboundOriginArrivalTime: String = convertDateFormat(inputDate:&inboundArrivalTime)
+        let inboundOriginDepartTime: String = AppHelper.convertDateFormat(inputDate:&inboundDepartTime)
+        let inboundOriginArrivalTime: String = AppHelper.convertDateFormat(inputDate:&inboundArrivalTime)
         let inboundStops: String = String(describing: segments?.stops ?? 0) + " stop"
         let inboundOriginAirportCode: String = (segments?.origin.airportCode ?? "N/A")
         let inboundFlightDuration: String = (segments?.accumulatedDuration)!
@@ -216,6 +216,15 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return CGSize(width: itemWidth, height: itemHeight )
         
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let airlineDetails = self.flightModel?.results[indexPath.row]
+        let segments = self.flightModel?.results[indexPath.row].segments.first
+
+        let vc = FlightDetailsViewController.instantiateFromStoryboard()
+        vc.flightSegment = segments
+        vc.fareModel = airlineDetails?.fareBreakdown.first
+        self.present(vc, animated: true, completion: nil)
+    }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         cell.transform = CGAffineTransform(scaleX: 0.11, y: 0.11)
         UIView.animate(withDuration: 0.5) {
@@ -244,22 +253,6 @@ extension ViewController
         return flightData
     }
     
-    func convertDateFormat(inputDate: inout String) -> String {
-        if inputDate == ""
-        {
-            inputDate = "2021-07-01T08:20:00"
-
-        }
-         let olDateFormatter = DateFormatter()
-         olDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-
-         let oldDate = olDateFormatter.date(from: inputDate)
-
-         let convertDateFormatter = DateFormatter()
-         convertDateFormatter.dateFormat = "hh:mm"
-
-         return convertDateFormatter.string(from: oldDate!)
-    }
 
     
 }

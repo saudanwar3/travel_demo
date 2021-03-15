@@ -181,3 +181,22 @@ extension UIImage {
         return animation
     }
 }
+class AppHelper : NSObject{
+    static func convertDateFormat(inputDate: inout String) -> String {
+        if inputDate == ""
+        {
+            inputDate = "2021-07-01T08:20:00"
+
+        }
+         let olDateFormatter = DateFormatter()
+         olDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+
+         let oldDate = olDateFormatter.date(from: inputDate)
+
+         let convertDateFormatter = DateFormatter()
+         convertDateFormatter.dateFormat = "hh:mm"
+
+         return convertDateFormatter.string(from: oldDate!)
+    }
+
+}
